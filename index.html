@@ -4,43 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>这是一个由毛杰生成的网页</title>
+    <title>Document</title>
     <style>
-        body {
-            background-color: #3498db;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        h1 {
-            color: #fff;
+        /* body {
             text-align: center;
-        }
+        } */
 
-        a {
-            color: #fff;
-            /* 超链接文字颜色为白色 */
-            text-decoration: none;
-            /* 去掉下划线 */
-            font-weight: bold;
-            /* 加粗文字 */
-        }
-
-        a:hover {
-            text-decoration: underline;
-            /* 鼠标悬停时显示下划线 */
+        #box {
+            width: 400px;
+            height: 300px;
+            background-color: lightgray;
+            position: relative;
         }
     </style>
 </head>
 
 <body>
-    <h1>这是一个由毛杰生成的网页</h1>
-    <a href="https://www.baidu.com" target="_blank">前往百度官网</a>
+    <div id="box"></div><!-- 画布 -->
+    <button id="btnShow">绘图</button>
+    <button id="btnClear">清空</button>
+    <script src="js/main.js"></script>
+    <script src="js/tool.js"></script>
+    <script src="js/point.js"></script>
+    <script>
+        // 获取box元素
+        let box = document.getElementById('box'); //获取box元素
+        let boxw = parseInt(getStyle(box, 'width')); //获取box宽度
+        let boxh = parseInt(getStyle(box, 'height')); //获取box高度  
+        // 按钮单击事件处理
+        let btnClear = document.getElementById('btnClear'); //清空按钮
+        let btnShow = document.getElementById('btnShow'); //绘图按钮
+        btnClear.onclick = clearPoints; //清空按钮注册事件
+        btnShow.onclick = createPoints; //绘图按钮注册事件
+    </script>
 </body>
 
 </html>
